@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edelweiss Cooltech - Service AC Profesional Tulungagung</title>
+    <meta name="description" content="Service AC Profesional di Tulungagung. Dinginnya Terukur, Kerjanya Jujur. Garansi, Transparan, dan Responsif.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        :root {
+            --primary: #0ea5e9; /* Sky Blue */
+            --primary-dark: #0284c7;
+            --secondary: #0f172a; /* Dark Slate */
+            --accent: #f59e0b; /* Amber/Gold untuk highlight */
+            --light: #f8fafc;
+            --text: #334155;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text); background-color: var(--light); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+
+        /* --- NAVBAR --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--secondary);
+        }
+        .logo img { height: 40px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-wa {
+            background: #25D366;
+            color: white !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
+        
+        /* Mobile Menu */
+        .hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: var(--secondary); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 8rem 1.5rem 5rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover { background: white; color: var(--secondary); }
+
+        /* --- SECTIONS GENERAL --- */
+        section { padding: 5rem 1.5rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem; }
+        .section-title p { color: #64748b; }
+
+        /* --- KEUNGGULAN (FEATURES) --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 { margin-bottom: 0.5rem; color: var(--secondary); }
+
+        /* --- DAFTAR HARGA --- */
+        .pricing { background: #e0f2fe; }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .price-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .price-card:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-left: 4px solid var(--accent); }
+        .price-card h4 { font-size: 1rem; color: var(--secondary); }
+        .price-card .price { font-weight: 700; color: var(--primary); font-size: 1.1rem; white-space: nowrap; }
+
+        /* --- MEDIA & SOSIAL --- */
+        .media-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .social-btn:hover { transform: scale(1.05); }
+        .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .tiktok { background: #000000; }
+        .youtube { background: #FF0000; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--secondary); color: #cbd5e1; padding: 4rem 1.5rem 2rem; }
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-col h3 { color: white; margin-bottom: 1.5rem; font-size: 1.2rem; }
+        .footer-col p, .footer-col a { display: block; margin-bottom: 0.8rem; transition: color 0.3s; }
+        .footer-col a:hover { color: var(--primary); }
+        .footer-col i { width: 25px; color: var(--primary); }
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* --- FLOATING WA BUTTON --- */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: transform 0.3s;
+        }
+        .float-wa:hover { transform: scale(1.1); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: white;
+                width: 100%;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { right: 0; }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 2rem; }
+            .price-card { flex-direction: column; text-align: center; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://i.postimg.cc/QCsHXv5Q/logo.png" alt="Logo Edelweiss">
+                <span>Edelweiss Cooltech</span>
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="#beranda" onclick="toggleMenu()">Beranda</a>
+                <a href="#keunggulan" onclick="toggleMenu()">Keunggulan</a>
+                <a href="#harga" onclick="toggleMenu()">Daftar Harga</a>
+                <a href="#kontak" onclick="toggleMenu()">Kontak</a>
+                <a href="https://wa.me/6281283151321?text=Halo%20Edelweiss%20Cooltech,%20saya%20ingin%20bertanya%20tentang%20service%20AC" class="btn-wa" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Hubungi Kami
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <h1>Service AC Profesional<br><span>Dinginnya Terukur • Kerjanya Jujur</span></h1>
+            <p>Spesialis Cooling, Refrigeration, dan Ventilation di Tulungagung. Kerja transparan, data real, alat proper, dan tidak asal tebak.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/6281283151321?text=Halo%20Edelweiss%20Cooltech,%20saya%20mau%20pesan%20jasa%20service%20AC" class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                </a>
+                <a href="#harga" class="btn-outline">Lihat Daftar Harga</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section id="keunggulan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Memilih Kami?</h2>
+                <p>Komitmen kami untuk memberikan pelayanan terbaik bagi kenyamanan Anda.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Bergaransi</h3>
+                    <p>Setiap pengerjaan dilengkapi garansi service untuk ketenangan pikiran Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-search-dollar"></i></div>
+                    <h3>Transparan</h3>
+                    <p>Kerja transparan, data real, dan penjelasan detail sebelum pengerjaan dimulai.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Responsif & Proper</h3>
+                    <p>Alat kerja proper dan tim yang responsif. Kami tidak bekerja dengan cara asal tebak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAFTAR HARGA -->
+    <section class="pricing" id="harga">
+        <div class="container">
+            <div class="section-title">
+                <h2>Daftar Harga Service AC 2026</h2>
+                <p>Harga jujur dan kompetitif tanpa biaya tersembunyi.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Cuci AC 1/2 - 1 PK</h4>
+                    <span class="price">Rp 80.000</span>
+                </div>
+                <div class="price-card">
+                    <h4>Cuci AC 1.5 - 2 PK</h4>
+                    <span class="price">Rp 100.000</span>
+                </div>
+                <div class="price-card">
+                    <h4>Cuci Detailing</h4>
+                    <span class="price">Rp 150.000</span>
+                </div>
+                <div class="price-card">
+                    <h4>Isi Freon R32 / R410</h4>
+                    <span class="price">Rp 300.000</span>
+                </div>
+                <div class="price-card">
+                    <h4>Pasang AC 1/2 - 1 PK</h4>
+                    <span class="price">Rp 250.000</span>
+                </div>
+                <div class="price-card">
+                    <h4>Bongkar Pasang AC</h4>
+                    <span class="price">Rp 450.000</span>
+                </div>
+                <div class="price-card">
+                    <h4>Service Besar / Overhaul</h4>
+                    <span class="price">Rp 350.000</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://wa.me/6281283151321?text=Halo,%20saya%20mau%20tanya%20detail%20harga%20service%20AC" class="btn-primary" target="_blank">Konsultasi Gratis via WA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA & SOSIAL -->
+    <section id="media">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lihat Bukti Kerja Kami</h2>
+                <p>Ikuti media sosial kami untuk tips AC dan dokumentasi pengerjaan.</p>
+            </div>
+            <div class="media-links">
+                <a href="https://www.instagram.com/servis_actulungagung/" target="_blank" class="social-btn ig">
+                    <i class="fab fa-instagram"></i> @servis_actulungagung
+                </a>
+                <a href="https://www.tiktok.com/@servis_actulungagung" target="_blank" class="social-btn tiktok">
+                    <i class="fab fa-tiktok"></i> @servis_actulungagung
+                </a>
+                <a href="https://youtube.com/@edelweiscooltech" target="_blank" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i> @edelweiscooltech
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #64748b;">Tonton video pendek kami:</p>
+                <a href="https://youtu.be/nXemZ118rMg" target="_blank" style="color: var(--primary); font-weight: 600;"><i class="fas fa-play-circle"></i> YouTube Shorts</a>
+                <span style="margin: 0 10px; color: #cbd5e1;">|</span>
+                <a href="https://www.instagram.com/reel/Dcvzot7KuPZ/" target="_blank" style="color: var(--primary); font-weight: 600;"><i class="fas fa-play-circle"></i> Instagram Reels</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="kontak">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Edelweiss Cooltech</h3>
+                <p>Service AC Profesional (Cooling - Refrigeration - Ventilation) di Tulungagung dan sekitarnya.</p>
+                <p><strong>Jam Operasional:</strong><br>Senin - Sabtu (08.00 - 17.00 WIB)</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <a href="https://wa.me/6281283151321"><i class="fab fa-whatsapp"></i> +62 812-8315-1321</a>
+                <a href="mailto:edelweiscooltech@gmail.com"><i class="fas fa-envelope"></i> edelweiscooltech@gmail.com</a>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Mastrip 1 No.28, Mangisan, Jepun, Tulungagung</p>
+                <a href="https://maps.app.goo.gl/HfxL17TNqdwz2i8x8" target="_blank" class="map-btn">
+                    <i class="fas fa-location-arrow"></i> Buka di Google Maps
+                </a>
+            </div>
+            <div class="footer-col">
+                <h3>Link Cepat</h3>
+                <a href="#beranda">Beranda</a>
+                <a href="#keunggulan">Keunggulan</a>
+                <a href="#harga">Daftar Harga</a>
+                <a href="https://edelweisscooltech-ind.netlify.app/" target="_blank">Website Versi Lama</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Edelweiss Cooltech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WA BUTTON -->
+    <a href="https://wa.me/6281283151321?text=Halo%20Edelweiss%20Cooltech,%20saya%20ingin%20bertanya%20tentang%20service%20AC" class="float-wa" target="_blank" title="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        // Menutup menu saat klik di luar area navigasi (opsional, untuk UX lebih baik di mobile)
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            if (!nav.contains(event.target) && !hamburger.contains(event.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
